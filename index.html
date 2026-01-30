@@ -1,22 +1,9 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Gangiya Enterprises</title>
-    <style>
-        /* CodePen ka pura CSS yahan paste karein */
-    </style>
-</head>
-<body>
-    <script>
-        /* CodePen ka pura JS (agar hai toh) yahan paste karein */
-    </script>
-</body>
-</html><!DOCTYPE html>
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gangiya Enterprises | गावां - तिसरी गिरिडीह</title>
+    <title>Gangiya Enterprises | Premium Construction & Machinery</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -24,112 +11,146 @@
         :root {
             --gold-gradient: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
             --deep-black: #050505;
-            --glass: rgba(255, 255, 255, 0.05);
+            --glass-card: rgba(255, 255, 255, 0.05);
             --border-gold: rgba(191, 149, 63, 0.5);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: var(--deep-black); color: #e0e0e0; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+        body { background-color: var(--deep-black); color: #e0e0e0; font-family: 'Poppins', sans-serif; overflow-x: hidden; scroll-behavior: smooth; }
 
-        /* Premium Logo & Nav */
-        nav { padding: 20px 5%; background: rgba(0,0,0,0.9); border-bottom: 1px solid var(--border-gold); text-align: center; position: sticky; top: 0; z-index: 1000; }
-        .logo-text { font-family: 'Cinzel', serif; font-size: 2rem; background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: 4px; }
+        /* Navigation / Logo Area */
+        nav { padding: 20px 10%; display: flex; justify-content: center; background: rgba(0,0,0,0.8); border-bottom: 1px solid var(--border-gold); }
+        .logo-box { text-align: center; border: 2px solid #bf953f; padding: 10px 20px; border-radius: 5px; }
+        .logo-box h1 { font-family: 'Cinzel', serif; font-size: 1.8rem; background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
         /* Hero Section */
         header {
-            height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),url(E0723658-BFAC-4EE4-8831-BE6E611A6AE3.png);
-            background-size: cover; background-position: center; border-bottom: 3px solid #bf953f;
+            height: 90vh;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070');
+            background-size: cover; background-attachment: fixed;
         }
-        .hero-h1 { font-family: 'Cinzel', serif; font-size: clamp(2.5rem, 8vw, 5rem); background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero-p { font-size: 1.2rem; letter-spacing: 3px; color: #fff; margin: 20px 0 40px; text-transform: uppercase; }
 
-        /* Section Layout */
+        .hero-title { font-family: 'Cinzel', serif; font-size: clamp(2rem, 8vw, 5rem); background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 10px; }
+        .hero-sub { font-size: 1.1rem; letter-spacing: 4px; text-transform: uppercase; color: #fff; margin-bottom: 30px; }
+
+        /* Section Styling */
         section { padding: 80px 10%; }
-        .section-title { text-align: center; font-family: 'Cinzel', serif; font-size: 2.5rem; color: #fcf6ba; margin-bottom: 50px; border-bottom: 2px solid #bf953f; display: inline-block; width: 100%; padding-bottom: 15px; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-family: 'Cinzel', serif; font-size: 2.5rem; color: #fcf6ba; border-bottom: 2px solid #bf953f; display: inline-block; padding-bottom: 10px; }
 
+        /* Service Cards */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .card { background: var(--glass); padding: 40px 25px; border-radius: 15px; border: 1px solid var(--border-gold); text-align: center; transition: 0.4s; }
-        .card:hover { transform: translateY(-10px); background: rgba(191, 149, 63, 0.08); }
-        .card i { font-size: 3.5rem; margin-bottom: 20px; color: #fcf6ba; }
+        .card { background: var(--glass-card); padding: 40px 25px; border-radius: 15px; border: 1px solid var(--border-gold); text-align: center; transition: 0.4s; }
+        .card:hover { transform: translateY(-10px); background: rgba(191,149,63,0.05); }
+        .card i { font-size: 3rem; margin-bottom: 20px; color: #fcf6ba; }
 
-        /* Enquiry Form */
-        .form-box { background: #111; padding: 40px; border-radius: 20px; border: 1px solid var(--border-gold); max-width: 700px; margin: auto; }
-        input, textarea { width: 100%; padding: 15px; margin-bottom: 15px; background: #222; border: 1px solid #444; color: #fff; border-radius: 5px; }
-        .btn-gold { width: 100%; padding: 15px; background: var(--gold-gradient); color: #000; font-weight: 700; border: none; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; }
+        /* Online Enquiry Form */
+        .enquiry-container { background: #111; padding: 50px; border-radius: 20px; border: 1px solid var(--border-gold); max-width: 800px; margin: auto; }
+        .form-group { margin-bottom: 20px; }
+        input, textarea { width: 100%; padding: 15px; background: #222; border: 1px solid #444; color: #fff; border-radius: 5px; font-family: inherit; }
+        input:focus { border-color: #bf953f; outline: none; }
 
-        /* Maps & Numbers */
-        .map-frame { border: 2px solid var(--border-gold); border-radius: 15px; overflow: hidden; height: 400px; margin-top: 30px; }
-        .num-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 30px; }
-        .num-btn { display: block; padding: 15px; background: var(--glass); border: 1px solid var(--border-gold); color: #fff; text-decoration: none; text-align: center; border-radius: 8px; font-weight: 600; transition: 0.3s; }
-        .num-btn:hover { background: var(--gold-gradient); color: #000; }
+        /* Google Map */
+        .map-box { border: 2px solid var(--border-gold); border-radius: 20px; overflow: hidden; height: 400px; margin-top: 40px; }
 
-        /* FAB */
+        /* Contact Details & All Numbers */
+        .numbers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 30px; }
+        .num-link { display: block; padding: 15px; background: var(--glass-card); border: 1px solid var(--border-gold); border-radius: 10px; color: #fff; text-decoration: none; font-weight: 600; text-align: center; transition: 0.3s; }
+        .num-link:hover { background: var(--gold-gradient); color: #000; }
+
+        /* Buttons */
+        .btn-gold { padding: 15px 35px; background: var(--gold-gradient); color: #000; font-weight: 700; text-decoration: none; border-radius: 4px; display: inline-block; transition: 0.3s; cursor: pointer; border: none; font-size: 1rem; }
+        .btn-gold:hover { filter: brightness(1.2); letter-spacing: 2px; }
+
+        /* Floating Contact */
         .fab-wa { position: fixed; bottom: 30px; right: 30px; width: 65px; height: 65px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.5); z-index: 999; }
+
+        @media (max-width: 768px) { section { padding: 60px 5%; } .enquiry-container { padding: 30px 15px; } }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo-text">GANGIYA ENTERPRISES</div>
+        <div class="logo-box">
+            <h1>GANGIYA</h1>
+            <p style="font-size: 0.7rem; letter-spacing: 3px; color: #fff;">ENTERPRISES</p>
+        </div>
     </nav>
 
     <header>
-        <h1 class="hero-h1">GANGIYA</h1>
-        <p class="hero-p">Build With The Best | सर्वश्रेष्ठ के साथ निर्माण करें</p>
-        <a href="#enquiry" class="btn-gold" style="width: auto; padding: 15px 40px;">Enquire Now | पूछताछ करें</a>
+        <h1 class="hero-title">ELITE SOLUTIONS</h1>
+        <p class="hero-sub">BUILDING EXCELLENCE IN GIRIDIH</p>
+        <a href="#enquiry" class="btn-gold">ENQUIRE NOW | अभी पूछताछ करें</a>
     </header>
 
     <section id="services">
-        <h2 class="section-title">Our Solutions | हमारी सेवाएं</h2>
+        <div class="section-header">
+            <h2>Our Assets | हमारी सेवाएं</h2>
+        </div>
         <div class="grid">
-            <div class="card"><i class="fas fa-truck-moving"></i><h3>Machinery | मशीनरी</h3><p>JCB, Hywa, Tractor & Mixture Machine.<br>जेसीबी, हाइवा, ट्रैक्टर और मिक्सर मशीन।</p></div>
-            <div class="card"><i class="fas fa-building-columns"></i><h3>Construction | निर्माण</h3><p>Sand, Stone Chips, Cement & Rods.<br>बालू, गिट्टी, सीमेंट और सरिया।</p></div>
-            <div class="card"><i class="fas fa-home"></i><h3>Interior | इंटीरियर</h3><p>Plywood, Furniture & Hardware.<br>प्लाईवुड, फर्नीचर और हार्डवेयर।</p></div>
+            <div class="card"><i class="fas fa-truck-pickup"></i><h3>JCB & Hywa</h3><p>Heavy machinery for every project. | हर प्रोजेक्ट के लिए भारी मशीनरी।</p></div>
+            <div class="card"><i class="fas fa-couch"></i><h3>Luxury Furniture</h3><p>Premium wood & modern design. | प्रीमियम लकड़ी और आधुनिक डिजाइन।</p></div>
+            <div class="card"><i class="fas fa-tools"></i><h3>Building Materials</h3><p>Sand, Gitti, Cement & Sariya. | बालू, गिट्टी, सीमेंट और सरिया।</p></div>
         </div>
     </section>
 
-    <section id="enquiry" style="background: rgba(191, 149, 63, 0.02);">
-        <h2 class="section-title">Online Enquiry | ऑनलाइन पूछताछ</h2>
-        <div class="form-box">
-            <input type="text" id="name" placeholder="आपका नाम (Your Name)" required>
-            <input type="tel" id="phone" placeholder="मोबाइल नंबर (Mobile Number)" required>
-            <textarea id="msg" rows="4" placeholder="आपकी जरूरत (Requirement)" required></textarea>
-            <button class="btn-gold" onclick="sendWA()">Send To WhatsApp | व्हाट्सएप भेजें</button>
+    <section id="enquiry">
+        <div class="section-header">
+            <h2>Online Enquiry | ऑनलाइन पूछताछ</h2>
+        </div>
+        <div class="enquiry-container">
+            <form id="whatsappForm">
+                <div class="form-group"><input type="text" id="custName" placeholder="आपका नाम (Your Name)" required></div>
+                <div class="form-group"><input type="tel" id="custPhone" placeholder="मोबाइल नंबर (Mobile Number)" required></div>
+                <div class="form-group"><textarea id="custMsg" rows="4" placeholder="आपकी जरूरत (Your Requirement - Gitti, Balu, JCB etc.)" required></textarea></div>
+                <button type="button" onclick="sendToWhatsApp()" class="btn-gold" style="width: 100%;">SEND VIA WHATSAPP | व्हाट्सएप से भेजें</button>
+            </form>
         </div>
     </section>
 
     <section id="location">
-        <h2 class="section-title">Visit Us | संपर्क करें</h2>
-        <p style="text-align: center; font-size: 1.2rem;">📍 तिसरी, <b>गावां</b>, गिरिडीह, झारखंड</p>
+        <div class="section-header">
+            <h2>Visit Us | संपर्क करें</h2>
+            <p>📍 Mawan, Tisri, Giridih, Jharkhand (मावां, तिसरी, गिरिडीह)</p>
+        </div>
         
-        <div class="map-frame">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116345.922880775!2d86.0028885!3d24.5878477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f139049a467e43%3A0xb3b2095db7f2095!2sTisri%2C%20Jharkhand!5e0!3m2!1sen!2sin!4v1706650000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <div class="map-box">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116348.1636183311!2d86.03847559999999!3d24.3164478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f1396b29158c57%3A0xc6a8b792e4a36f5!2sTisri%2C%20Jharkhand!5e0!3m2!1sen!2sin!4v1706620000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
 
-        <div class="num-grid">
-            <a href="tel:8292327117" class="num-btn">📞 8292327117</a>
-            <a href="tel:8227834848" class="num-btn">📞 8227834848</a>
-            <a href="tel:8002322356" class="num-btn">📞 8002322356</a>
-            <a href="tel:9771129905" class="num-btn">📞 9771129905</a>
+        <div class="numbers-grid">
+            <a href="tel:8292327117" class="num-link"><i class="fas fa-phone"></i> 8292327117</a>
+            <a href="tel:8227834848" class="num-link"><i class="fas fa-phone"></i> 8227834848</a>
+            <a href="tel:8002322356" class="num-link"><i class="fas fa-phone"></i> 8002322356</a>
+            <a href="tel:9771129905" class="num-link"><i class="fas fa-phone"></i> 9771129905</a>
         </div>
     </section>
 
-    <footer style="padding: 40px; text-align: center; border-top: 1px solid var(--border-gold); opacity: 0.7;">
-        <p>© 2026 GANGIYA ENTERPRISES | TISRI - GAWAN | गिरिडीह</p>
+    <footer style="padding: 40px; text-align: center; border-top: 1px solid var(--border-gold);">
+        <p>© 2026 GANGIYA ENTERPRISES | TISRI GAWAN GIRIDIH | BUILDING THE FUTURE</p>
     </footer>
 
-    <a href="https://wa.me/918292327117" class="fab-wa"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://wa.me/918292327117" class="fab-wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
     <script>
-        function sendWA() {
-            const n = document.getElementById('name').value;
-            const p = document.getElementById('phone').value;
-            const m = document.getElementById('msg').value;
-            if(!n || !p || !m) { alert("विवरण भरें!"); return; }
-            const text = `*New Enquiry - Gangiya Enterprises*%0A*Name:* ${n}%0A*Phone:* ${p}%0A*Need:* ${m}`;
-            window.open(`https://wa.me/918292327117?text=${text}`, '_blank');
+        function sendToWhatsApp() {
+            const name = document.getElementById('custName').value;
+            const phone = document.getElementById('custPhone').value;
+            const msg = document.getElementById('custMsg').value;
+            
+            if(!name || !phone || !msg) { alert("कृपया सभी जानकारी भरें!"); return; }
+
+            const whatsappUrl = `https://wa.me/918292327117?text=` 
+                + `*New Online Enquiry - Gangiya Enterprises*%0A`
+                + `*----------------------------------*%0A`
+                + `*Name:* ${name}%0A`
+                + `*Mobile:* ${phone}%0A`
+                + `*Requirement:* ${msg}`;
+            
+            window.open(whatsappUrl, '_blank');
         }
     </script>
+
 </body>
 </html>
